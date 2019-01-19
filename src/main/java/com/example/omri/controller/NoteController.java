@@ -11,9 +11,7 @@ import com.example.omri.repository.NoteRepository;
 import javax.validation.Valid;
 import java.util.List;
 
-/**
- * Created by rajeevkumarsingh on 27/06/17.
- */
+
 @RestController
 @RequestMapping("/api")
 public class NoteController {
@@ -51,7 +49,7 @@ public class NoteController {
         return updatedNote;
     }
 
-    @DeleteMapping("/notes/{id}")
+    @DeleteMapping("/ /{id}")
     public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long noteId) {
         Note note = noteRepository.findById(noteId)
                 .orElseThrow(() -> new ResourceNotFoundException("Note", "id", noteId));
